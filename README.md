@@ -1,0 +1,1 @@
+Proyectos Angular desde la version 2 en adelante. Estara dividido por carpeta y cada carpeta es un proyecto Angular que permitirÁ  poner en práctica caracterisitcas de este Framework. En cada carpeta encontraras tambien un archivo README con instrucciones específicas del proyecto tratado 
