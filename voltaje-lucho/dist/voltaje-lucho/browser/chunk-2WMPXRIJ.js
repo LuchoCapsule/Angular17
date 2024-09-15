@@ -1,0 +1,2 @@
+import{Da as c,Q as i,la as s,ma as r,oa as n,pa as a}from"./chunk-7OBV5KT5.js";var f=(()=>{let e=class e{};e.\u0275fac=function(o){return new(o||e)},e.\u0275cmp=i({type:e,selectors:[["app-otros-servicios"]],standalone:!0,features:[a],decls:3,vars:0,template:function(o,d){o&1&&(s(0,"p"),n(1,"otros-servicios works!"),r(),n(2,`,
+`))},dependencies:[c],styles:["[_nghost-%COMP%]{display:block}"],changeDetection:0});let t=e;return t})();export{f as default};
