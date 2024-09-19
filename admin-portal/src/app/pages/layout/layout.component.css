@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+/* Change cursor to pointer on hover */
+.nav-link:hover {
+  color: white !important;
+  cursor: pointer;
+}
+
+/* Style for active menu option */
+.nav-link.active {
+  background-color: #007bff;
+  color: white !important;
+}

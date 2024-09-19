@@ -1,0 +1,63 @@
+/* The :host selector is used to style the host element of the component */
+:host {
+  display: block;
+}
+
+/* Styles for the primary form control elements */
+.form-control-primary {
+  margin: 10px;
+  opacity: 0.2;
+  border-radius: 2px;
+}
+ 
+/**
+ * Defines the CSS styles for the sidebar component.
+ *
+ * The sidebar is positioned fixed to the left side of the screen and spans from the top to the bottom.
+ * It has a z-index of 100 to ensure it appears above other elements on the page.
+ * The padding is set to 70px on the top and 10px on the left, with no padding on the right and bottom.
+ * The sidebar has a border on the right side with a color of #d3d3d3.
+ */
+.sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 100;
+  padding: 70px 0 0 10px;
+  border-right: 1px solid #d3d3d3;
+}
+
+
+/**
+ * 
+ * CSS styles for the left sidebar component.
+ * 
+ * @class LeftSidebarComponent
+ * @memberof app.pages.dashboard
+ * @cssselector .left-sidebar
+ * 
+ * @property {string} position - Specifies the positioning method for the element.
+ * @property {string} top - Specifies the distance between the top edge of the element and the top edge of its containing block.
+ * @property {string} height - Specifies the height of the element.
+ */
+.left-sidebar {
+  position: sticky;
+  top:0;
+  height: calc(100vh - 70px)
+}
+
+.sidebar-nav li .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+main {
+  padding-top: 90px;
+}
+main .card {
+  margin-bottom: 20px;
+}
+.navbar-brand{
+margin:10px;
+}

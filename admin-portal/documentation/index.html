@@ -1,0 +1,290 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>admin-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">admin-portal documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>AdminPortal</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 17.3.2.</p>
+<p>The intent of this project is to test how the following imports behave in Angular 17:</p>
+<ol>
+<li>RouterOutlet</li>
+<li>RouterLinkActive</li>
+<li>RouterLink</li>
+<li>Children menu options inside app.route.ts</li>
+</ol>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#development-server">Development server</a></li>
+<li><a href="#code-scaffolding">Code scaffolding</a></li>
+<li><a href="#build">Build</a></li>
+<li><a href="#running-unit-tests">Running unit tests</a></li>
+<li><a href="#running-end-to-end-tests">Running end-to-end tests</a></li>
+<li><a href="#project-structure">Project Structure</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#further-help">Further help</a></li>
+</ul>
+<h2>Development server</h2>
+<p>Clone this project, open and VSCode and run command below to install dependency. 
+<code>npm install</code>. </p>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The application will automatically reload if you change any of the source files.</p>
+<h2>Code scaffolding</h2>
+<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+<h2>Build</h2>
+<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
+<h2>Running unit tests</h2>
+<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+<h2>Running end-to-end tests</h2>
+<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
+<h2>Project Structure</h2>
+<p>admin-portal/
+├── .angular/
+│   └── cache/
+│       └── 17.3.9/
+│           ├── admin-portal/
+│           └── vite/
+├── .editorconfig
+├── .gitignore
+├── .vscode/
+│   ├── extensions.json
+│   ├── launch.json
+│   └── tasks.json
+├── angular.json
+├── package.json
+├── README.md
+├── src/
+│   ├── app/
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   │   ├── interfaces/
+│   │   │   └── login.ts
+│   │   ├── pages/
+│   │   │   ├── dashboard/
+│   │   │   │   ├── dashboard.component.css
+│   │   │   │   ├── dashboard.component.html
+│   │   │   │   ├── dashboard.component.spec.ts
+│   │   │   │   ├── dashboard.component.ts
+│   │   │   ├── employee/
+│   │   │   │   ├── employee.component.css
+│   │   │   │   ├── employee.component.html
+│   │   │   │   ├── employee.component.spec.ts
+│   │   │   │   ├── employee.component.ts
+│   │   │   ├── layout/
+│   │   │   │   ├── layout.component.css
+│   │   │   │   ├── layout.component.html
+│   │   │   │   ├── layout.component.spec.ts
+│   │   │   │   ├── layout.component.ts
+│   │   │   ├── login/
+│   │   │   │   ├── login.component.css
+│   │   │   │   ├── login.component.html
+│   │   │   │   ├── login.component.spec.ts
+│   │   │   │   ├── login.component.ts
+│   │   │   ├── shared/
+│   │   │       ├── not-found/
+│   │   │           ├── not-found.component.css
+│   │   │           ├── not-found.component.html
+│   │   │           ├── not-found.component.spec.ts
+│   │   │           ├── not-found.component.ts
+│   ├── assets/
+│   │   └── .gitkeep
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json</p>
+<h2>Dependencies</h2>
+<ul>
+<li>Angular: ^17.3.0</li>
+<li>Bootstrap: ^5.3.3</li>
+<li>Font Awesome: ^4.7.0</li>
+<li>RxJS: ~7.8.0</li>
+<li>Zone.js: ~0.14.3</li>
+</ul>
+<h2>Contributing</h2>
+<ol>
+<li>Fork the repository.</li>
+<li>Create a new branch (<code>git checkout -b feature-branch</code>).</li>
+<li>Make your changes.</li>
+<li>Commit your changes (<code>git commit -m &#39;Add some feature&#39;</code>).</li>
+<li>Push to the branch (<code>git push origin feature-branch</code>).</li>
+<li>Open a pull request.</li>
+</ol>
+<h2>Further help</h2>
+<p>To get more help on the Angular CLI use <a href="command:_github.copilot.openSymbolFromReferences?%5B%22ng%20help%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22d%3A%5C%5C03%20Capacitaciones%5C%5CAngular%5C%5Cangular17%5C%5CMyAngularProjects%5C%5Cadmin-portal%5C%5CREADME.md%22%2C%22_sep%22%3A1%2C%22external%22%3A%22file%3A%2F%2F%2Fd%253A%2F03%2520Capacitaciones%2FAngular%2Fangular17%2FMyAngularProjects%2Fadmin-portal%2FREADME.md%22%2C%22path%22%3A%22%2Fd%3A%2F03%20Capacitaciones%2FAngular%2Fangular17%2FMyAngularProjects%2Fadmin-portal%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A26%2C%22character%22%3A41%7D%7D%5D%5D" title="Go to definition"><code>ng help</code></a> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
