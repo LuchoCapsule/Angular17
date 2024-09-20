@@ -1,6 +1,8 @@
 # UnitTestsAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+The objective is to run tests using Jasmine and Karma in angular 17. To get started, clone this project to your local machine, open it with VSCode, install the dependencies using `npm install` and
+then run the tests using `ng test` in the terminal for unit testing.
 
 ## Development server
 
