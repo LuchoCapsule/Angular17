@@ -1,4 +1,10 @@
 # AngularGPT
+This project help me to practice the implementation for the following frameworks and tools
+1) Tailwindcss
+2) OpenAI package by npm 
+3) FontAwesome by CDN
+4) router-outlet module to show the path in the url bar
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
